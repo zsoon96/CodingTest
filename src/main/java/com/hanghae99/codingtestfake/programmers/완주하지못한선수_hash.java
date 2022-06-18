@@ -1,6 +1,8 @@
 package com.hanghae99.codingtestfake.programmers;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 class Solution2 {
     public String solution(String[] participant, String[] completion) {
@@ -24,12 +26,25 @@ class Solution2 {
 
         // 3. value가 0이 아닌 마지막 주자 찾기
         // .keySet() : map이 들고있는 전체 key에 대한 배열 반환
-        for (String key : map.keySet()) {
-            if (map.get(key) != 0 ){
-                answer = key;
+//        for (String key : map.keySet()) {
+//            if (map.get(key) != 0 ){
+//                answer = key;
+//                break;
+//            }
+//        }
+
+        // .entrySet() : keySet() 보다 성능이 우수
+        // Iterator : 반복을 쉽게해주는 하나의 클래스
+        Iterator<Map.Entry<String,Integer>> iter = map.entrySet().iterator();
+
+        while(iter.hasNext()) {
+            Map.Entry<String,Integer> entry = iter.next();
+            if (entry.getValue() != 0) {
+                answer = entry.getKey();
                 break;
             }
         }
+
         return answer;
 
     }

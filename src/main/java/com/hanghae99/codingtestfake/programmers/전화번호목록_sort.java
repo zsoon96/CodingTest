@@ -12,12 +12,11 @@ class Solution3 {
         // 2. 반복문을 통해 해당 문자열이 있는지 체크
         // startsWith(): 대상 문자열이 특정 문자 또는 문자열로 시작하는지 체크
         // 제일 작은 문자열부터 반복문 실행 > 다른 문자열에 기준이 되는 해당 문자열이 시작되는지 체크
-        for (int i = 0; i < phone_book.length-1; i++) {
-            if (phone_book[i+1].startsWith(phone_book[i])) {
+        // == 앞번호가 뒷번호의 접두어인지 확인 !
+        for (int i = 0; i < phone_book.length-1; i++)
+            if (phone_book[i+1].startsWith(phone_book[i]))
                 answer = false;
-                break;
-            }
-        }
+                
         return answer;
     }
 

@@ -5,7 +5,6 @@ import java.util.List;
 
 class Solution9 {
     public int solution(String pb) {
-        int answer = 0;
 
         // 1. 정수 배열 생성
         List<Integer> num = new ArrayList<>();
@@ -14,15 +13,15 @@ class Solution9 {
         String[] sp = pb.split("");
         for ( int i = 0; i < sp.length; i++ ){
             num.add(Integer.parseInt(sp[i]));
-            System.out.println(num);
         }
 
         // 3. 반복문 돌리면서 인덱스 순으로 연산
-        for ( int j = 0; j < num.size(); j++) {
-            if (num.get(j) < 0 ) {
-                answer *= num.get(j + 1);
-            } else if (num.get(j) == 0) {
-                answer += num.get(j + 1);
+        int answer = num.get(0);
+        for ( int j = 1; j < num.size(); j++) {
+            if (answer > 0 && num.get(j) > 0 ) {
+                answer = answer * num.get(j);
+            } else if (answer == 0 || num.get(j) == 0) {
+                answer = answer + num.get(j);
             }
         }
         return answer;

@@ -1,4 +1,4 @@
-package com.hanghae99.codingtestfake.programmers;
+package com.hanghae99.codingtestfake.greedy;
 
 import java.io.*;
 import java.util.ArrayList;

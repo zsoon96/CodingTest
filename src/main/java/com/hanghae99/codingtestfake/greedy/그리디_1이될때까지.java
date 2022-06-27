@@ -1,4 +1,4 @@
-package com.hanghae99.codingtestfake.programmers;
+package com.hanghae99.codingtestfake.greedy;
 
 // 1. n이 k로 나누어 떨어지는 값(t)을 구하고,
 // 2. n에서 t를 빼면 n-1 과정의 횟수(cnt)를 구할 수 있음 (n이 k로 나눴을 때 나머지 값)

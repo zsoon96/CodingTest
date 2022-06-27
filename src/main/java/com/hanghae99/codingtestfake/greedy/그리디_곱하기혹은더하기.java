@@ -1,7 +1,4 @@
-package com.hanghae99.codingtestfake.programmers;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.hanghae99.codingtestfake.greedy;
 
 class Solution9 {
     public int solution(String pb) {

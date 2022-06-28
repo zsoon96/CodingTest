@@ -14,6 +14,7 @@ public class X보다작은수_buffer {
         int n = Integer.parseInt(st.nextToken());;
         int x = Integer.parseInt(st.nextToken());
 
+        // 입력 형태가 다를 때 마다 선언해서 넣어줘야하나
         StringTokenizer line = new StringTokenizer(br.readLine());
         int [] num = new int [n];
 

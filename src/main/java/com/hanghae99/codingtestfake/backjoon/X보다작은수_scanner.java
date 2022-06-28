@@ -2,7 +2,7 @@ package com.hanghae99.codingtestfake.backjoon;
 
 import java.util.Scanner;
 
-public class X보다작은수 {
+public class X보다작은수_scanner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

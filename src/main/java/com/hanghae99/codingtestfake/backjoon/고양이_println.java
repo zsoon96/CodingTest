@@ -1,6 +1,6 @@
 package com.hanghae99.codingtestfake.backjoon;
 
-public class 고양이 {
+public class 고양이_println {
 
     public static void main(String[] args) {
         // 자바에서는 몇몇 문자는 단독으로 써서 출력할 수 없다. ( 대표적으로 백슬래시와 큰 따옴표가 있다. )

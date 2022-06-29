@@ -1,8 +1,8 @@
-package com.hanghae99.codingtestfake.backjoon;
+package com.hanghae99.codingtestfake.backjoon.basic;
 
-public class 고양이_sbuffer {
+public class 고양이_sb {
     public static void main(String[] args) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
         sb.append("\\    /\\\n");
         sb.append(" )  ( ')\n");

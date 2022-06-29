@@ -1,4 +1,4 @@
-package com.hanghae99.codingtestfake.backjoon;
+package com.hanghae99.codingtestfake.backjoon.basic;
 
 public class 고양이_println {
 

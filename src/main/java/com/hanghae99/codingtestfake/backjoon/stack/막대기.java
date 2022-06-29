@@ -19,10 +19,14 @@ public class 막대기 {
         }
 
         int answer = 1; // 자기 자신 포함
-        int me = height.get(n-1);
-        // 자기 자신과 비교해서 수가 크면 answer 값 ++
-        for ( int i = 0; i < n; i++ ){
-            if ( me < height.get(i)) {
+
+        int max = height.get(n-1);
+        // 만약, 7 9 7 5 6 처럼 6보다 7이 큰데 9 때문에 가려서 안보일 경우를 고려해야함!
+        // 즉, 단순히 마지막 요소의 값보다 크다고 다 큰게 아님
+        // 끝에서부터 왼쪽으로 크기 비교하면서 값 업데이트 해주는 로직으로 변경
+        for ( int i = n-1; i >= 0; i-- ){
+            if ( max < height.get(i)) {
+                max = height.get(i);
                 answer ++;
             }
         }

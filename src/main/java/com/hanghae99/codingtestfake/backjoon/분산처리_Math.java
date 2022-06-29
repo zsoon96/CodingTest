@@ -21,6 +21,7 @@ public class 분산처리_Math {
             // 1의 자리 수가 0이면 10으로 리턴
             num = num == 0 ? 10 : num;
 
+            // 7의 100승과 9의 635승의 값이 정수 범위를 넘어버리기 때문에 오답
             System.out.println(num);
         }
     }

@@ -14,6 +14,7 @@ public class 상금헌터_2 {
         int won = 10000;
         int[] fir = {500, 300, 200, 50, 30, 10};
         int [] firRank = {1,2,3,4,5,6};
+
         int[] sec = {512, 256, 128, 64, 31};
         int [] secRank = {1,2,4,8,16};
 
@@ -26,7 +27,7 @@ public class 상금헌터_2 {
             int temp = 0;
 
             if ( a != 0 ) {
-                for (int i = 0; i < n; i++ ){
+                for (int i = 0; i < 6; i++ ){
                     if ( a <= temp + firRank[i]) {
                         money += fir[i];
                         break;
@@ -38,7 +39,7 @@ public class 상금헌터_2 {
             temp = 0;
 
             if ( b != 0 ) {
-                for ( int i = 0; i < n-1; i++ ) {
+                for ( int i = 0; i < 5; i++ ) {
                     if ( b <= temp + secRank[i]) {
                         money += sec[i];
                         break;

@@ -22,7 +22,7 @@ public class 스택 {
 
             else if ( st.contains("pop") ) {
                 if ( !answer.isEmpty() ) {
-                    System.out.println(answer.pop());
+                    System.out.println(answer.get(answer.size()-1));
                     answer.pop();
                 }
                 else {

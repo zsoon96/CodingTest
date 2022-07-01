@@ -23,10 +23,11 @@ public class 국회의원선거 {
 
             if ( vote.length != 0 ) {
                 Arrays.sort(vote);
-                int max = vote[vote.length-1];
+//                int max = vote[vote.length-1];
+                int max = vote.length-1;
 
-                if (me <= max) {
-                    max--;
+                if (me <= vote[max]) {
+                    vote[max]--;
                     me ++;
                     cnt++;
                 }

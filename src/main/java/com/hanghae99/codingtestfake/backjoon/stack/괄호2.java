@@ -19,7 +19,7 @@ public class 괄호2 {
             int length = line.length();
 
             for ( int j = 0; j < length; j++ ) {
-                char text = line.charAt(i);
+                char text = line.charAt(j);
 
                 if ( text == '(') {
                     input.push(text);

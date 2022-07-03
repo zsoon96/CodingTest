@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class 수정렬하기3 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
         int [] num = new int[n];
@@ -16,10 +17,13 @@ public class 수정렬하기3 {
             num[i] = Integer.parseInt(br.readLine());
         }
 
+        // Arrays.sort() 성능이 좋은 편 아님!
         Arrays.sort(num);
 
         for (int i = 0; i<n; i++) {
-            System.out.println(num[i]);
+            sb.append(num[i]).append("\n");
         }
+
+        System.out.println(sb);
     }
 }

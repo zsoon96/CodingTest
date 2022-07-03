@@ -8,28 +8,24 @@ import java.util.*;
 public class 수정렬하기2 {
     public static void main (String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int n = Integer.parseInt(st.nextToken());
-        Map< Integer, Integer > map = new HashMap<Integer, Integer>();
-
-        for (int i = 0; i < n; i++ ) {
-            StringTokenizer line = new StringTokenizer(br.readLine());
-            map.put(i, Integer.parseInt(line.nextToken()));
-        }
-
-        // value 값 기준 정렬 (오름차순)
-        List<Map.Entry<Integer, Integer>> entryList = new LinkedList<>(map.entrySet());
-        entryList.sort(Map.Entry.comparingByValue());
-//        for(Map.Entry<Integer, Integer> entry : entryList){
-//            System.out.println("key : " + entry.getKey() + ", value : " + entry.getValue());
-//        }
-
         StringBuilder sb = new StringBuilder();
-        for ( int i = 0; i <n; i++ ) {
-            sb.append(entryList.get(i).getValue()).append("\n");
+
+        int n = Integer.parseInt(br.readLine());
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        for ( int i = 0; i < n; i++ ) {
+            list.add(Integer.parseInt(br.readLine()));
         }
 
+        // Array.sort -> 시간 초
+        Collections.sort(list);
+
+        for (int i = 0; i < n; i++) {
+            sb.append(list.get(i)).append("\n");
+        }
+
+        // StringBuilder에 한번에 담아서 출력해서 시간 save
         System.out.println(sb);
     }
 }

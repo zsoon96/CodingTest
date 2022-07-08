@@ -67,12 +67,12 @@ public class 숫자카드2 {
             // 배열의 중간 위치 구하기
             int mid = (start + end) / 2;
 
-            // key값이 중간 위치 값보다 같거나 작을 경우
+            // key값이 중간 위치 값보다 작을 경우
             if ( key < num[mid] ) {
                 end = mid;
             }
 
-            // key값이 중간 위치 값보다 클 경우
+            // key값이 중간 위치 값보다 같거나 클 경우
             else {
                 start = mid + 1;
             }

@@ -35,8 +35,10 @@ public class 먹을것인가먹힐것인가 {
             int cnt = 0;
             for ( int j = 0; j < arrA.length; j++ ) {
                 for ( int k = 0; k < arrB.length; k++ ) {
-                    if ( arrA[j] > arrB[k]) {
-                        cnt ++;
+                    if ( arrA[j] <= arrB[k]) {
+                        break; // 해당 조건에 만족하면 for문 종료 -> 불필요한 loop 제거
+                    } else {
+                        cnt++;
                     }
                 }
             }

@@ -13,22 +13,25 @@ public class 숫자 {
         long a = Long.parseLong(st.nextToken());
         long b = Long.parseLong(st.nextToken());
 
-        List<Long> list = new ArrayList<>();
-        long temp = 0;
-
-        while (a < b-1) {
-            temp = a;
-            a = temp + 1;
-            list.add(a);
+        // a와 b가 같을 경우
+        if ( a == b ) {
+            System.out.println(0);
         }
 
-        Collections.sort(list);
-
-        StringBuilder sb = new StringBuilder();
-        for ( int i = 0; i < list.size(); i++ ) {
-            sb.append(list.get(i)).append(" ");
+        // a가 b보다 클 경우
+        if ( a > b ) {
+            System.out.println(a-b-1);
+            for ( long i = b+1; i < a; i++ ) {
+                System.out.print( i + " ");
+            }
         }
 
-        System.out.println(sb);
+        // b가 a보다 클 경우
+        if ( b > a ) {
+            System.out.println(b-a-1);
+            for ( long i = a+1; i < b; i++ ) {
+                System.out.print( i + " ");
+            }
+        }
     }
 }

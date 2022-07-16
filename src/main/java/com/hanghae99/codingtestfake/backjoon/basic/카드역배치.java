@@ -12,9 +12,11 @@ public class 카드역배치 {
 
         for ( int i = 0; i < 10; i++ ) {
             StringTokenizer st = new StringTokenizer(br.readLine());
+            // 올림을 위해 double로 선언
             double start = Double.parseDouble(st.nextToken());
             double end = Double.parseDouble(st.nextToken());
 
+            // 두 수에서 인덱스 순서의 처음과 끝을 지정하고, 해당 범위 내에서 순서 바꿔주기 + j가 해당 범위의 중간까지만 도달했을 때까지
             for (int j = (int) end, k = (int) start; j >= (int)Math.ceil((end+start)/2); j--, k++ ){
                 int temp = num[j-1];
                 num[j-1] = num[k-1];

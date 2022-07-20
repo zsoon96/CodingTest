@@ -30,18 +30,23 @@ public class 듣보잡 {
             }
         }
 
-        // key 값 기준으로
-        List<String> arr = new ArrayList<>(map.keySet());
-        // 사전 순 정렬 후 (오름차순 정렬)
-        Collections.sort(arr);
+        // value가 2인 key만 담아줄 리스트 생성
+        ArrayList<String> answer = new ArrayList<String>();
 
-        // value 2인 key만 출력
-        for ( String answer : arr ){
-            int value = map.get(answer);
-
-            if ( value == 2 ) {
-                System.out.println(answer);
+        for ( String key : map.keySet() ) {
+            if ( map.get(key) == 2 ) {
+                answer.add(key);
             }
+        }
+
+        // 리스트 오름차순 정렬
+        Collections.sort(answer);
+
+        // 리스트의 개수 출력
+        System.out.println(answer.size());
+        // 리스트 내용 출력
+        for ( int i = 0; i < answer.size(); i++ ) {
+            System.out.println(answer.get(i));
         }
 
     }

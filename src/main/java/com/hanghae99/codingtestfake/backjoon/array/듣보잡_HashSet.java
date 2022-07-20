@@ -32,11 +32,15 @@ public class 듣보잡_HashSet {
         // 리스트 오름차순 정렬
         Collections.sort(list);
 
+        // 시간 단축을 위해 사용
+        StringBuilder sb = new StringBuilder();
+
         // 리스트 갯수 출력
-        System.out.println(list.size());
+        sb.append(list.size()).append("\n");
         // 리스트 내용 출력
         for ( int i = 0; i < list.size(); i++ ) {
-            System.out.println(list.get(i));
+            sb.append(list.get(i)).append("\n");
         }
+        System.out.print(sb);
     }
 }

@@ -9,42 +9,47 @@ import java.util.StringTokenizer;
 public class 먹을것인가먹힐것인가 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        StringBuilder sb = new StringBuilder();
 
         int t = Integer.parseInt(br.readLine());
 
         // 전체 테스트
-        for ( int i = 0; i < t; i++ ){
-            StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int tt = 0; tt < t; tt++) {
+            st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
             int m = Integer.parseInt(st.nextToken());
 
             int[] nArr = new int[n];
             int[] mArr = new int[m];
 
-            // a 배열
+            // a 배열 생성
             st = new StringTokenizer(br.readLine());
-            for ( int a = 0; a < n; a++ ) {
-                nArr[a] = Integer.parseInt(st.nextToken());
+            for (int i = 0; i < n; i++) {
+                nArr[i] = Integer.parseInt(st.nextToken());
             }
 
-            // b 배열
             st = new StringTokenizer(br.readLine());
-            for ( int b = 0; b < m; b++ ) {
-                mArr[b] = Integer.parseInt(st.nextToken());
+            for (int i = 0; i < m; i++) {
+                mArr[i] = Integer.parseInt(st.nextToken());
             }
 
-            // 배열간 숫자 비교
+            Arrays.sort(mArr);
+
             int cnt = 0;
-            for ( int j = 0; j < n; j++ ){
-                for ( int k = 0; k < m; k++ ){
-                    // a가 가지고 있는 숫자가 더 크면 cnt + 1
-                    if ( nArr[j] > mArr[k] ) {
-                        cnt ++;
+
+            for ( int i = 0; i < n; i ++ ){
+                for ( int j = m-1; j >= 0; j-- ) {
+                    // 현재 a 배열의 수가 b의 마지막 배열의 수보다 크면
+                    if ( nArr[i] > mArr[j] ) {
+                        // 마지막 배열 인덱스 값 + 1 (mArr[0])
+                        cnt += j+1;
+                        break;
                     }
                 }
             }
-            System.out.println(cnt);
+            sb.append(cnt).append("\n");
         }
-
+        System.out.println(sb);
     }
 }

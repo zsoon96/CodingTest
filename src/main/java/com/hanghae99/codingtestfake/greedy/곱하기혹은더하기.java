@@ -21,9 +21,11 @@ public class 곱하기혹은더하기 {
             }
 
             // 앞과 뒤 숫자가 1보다 크면 곱해주기
-            else if ( Integer.parseInt(num[i-1]) > 1 && Integer.parseInt(num[i]) > 1 ) {
-                result *= Integer.parseInt(num[i]);
-            }
+            result *= Integer.parseInt(num[i]);
+
+//            else if ( Integer.parseInt(num[i-1]) > 1 && Integer.parseInt(num[i]) > 1 ) {
+//                result *= Integer.parseInt(num[i]);
+//            }
         }
         System.out.println(result);
     }

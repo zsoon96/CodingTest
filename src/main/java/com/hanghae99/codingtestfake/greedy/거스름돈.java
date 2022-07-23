@@ -14,7 +14,8 @@ public class 거스름돈 {
 
         for ( int i = 0; i < coins.length; i++ ) {
             cnt += n / coins[i];
-            n = n - (coins[i] * (n / coins[i]));
+            // n = n - (coins[i] * (n / coins[i]));
+            n %= coins[i];
         }
 
         System.out.println(cnt);

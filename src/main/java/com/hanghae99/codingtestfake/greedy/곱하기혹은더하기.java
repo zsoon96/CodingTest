@@ -15,13 +15,13 @@ public class 곱하기혹은더하기 {
 
 
         for ( int i = 1; i < num.length; i++ ) {
-            // 앞 또는 뒤 숫자가 0이면 더해주고
-            if ( Integer.parseInt(num[i-1]) == 0 || Integer.parseInt(num[i]) == 0 ) {
+            // 앞 또는 뒤 숫자가 하나라도 0, 1이면 더해주고
+            if ( Integer.parseInt(num[i-1]) <= 1 || Integer.parseInt(num[i]) <= 1 ) {
                 result += Integer.parseInt(num[i]);
             }
 
-            // 앞과 뒤 숫자가 0이 아니면 곱해주기
-            else if ( Integer.parseInt(num[i-1]) != 0 && Integer.parseInt(num[i]) != 0 ) {
+            // 앞과 뒤 숫자가 1보다 크면 곱해주기
+            else if ( Integer.parseInt(num[i-1]) > 1 && Integer.parseInt(num[i]) > 1 ) {
                 result *= Integer.parseInt(num[i]);
             }
         }

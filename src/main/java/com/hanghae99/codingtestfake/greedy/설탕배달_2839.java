@@ -9,7 +9,7 @@ public class 설탕배달_2839 {
         int n = Integer.parseInt(br.readLine());
         int answer = 0;
 
-        while ( n > 0 ) {
+        while ( true ) {
             // 5로 바로 나누어 떨어지면 게임 끝
             if ( n % 5 == 0 ) {
                 answer += n / 5;

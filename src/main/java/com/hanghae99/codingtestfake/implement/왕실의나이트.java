@@ -23,7 +23,7 @@ public class 왕실의나이트 {
             // 이동하고자하는 위치 확인
             int nextRow = row + dx[i];
             int nextCol = column + dy[i];
-            // 정해진 공간에 벗어나지 않는다면 cnt + 1
+            // 정해진 공간에 벗어나지 않는다면 cnt + 1 (최소 1 / 최대 8)
             if ( nextRow >= 1 && nextRow <= 8 && nextCol >= 1 && nextCol <= 8 ) {
                 cnt ++;
             }

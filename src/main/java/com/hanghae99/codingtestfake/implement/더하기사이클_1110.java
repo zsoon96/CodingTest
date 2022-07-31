@@ -7,24 +7,22 @@ import java.io.InputStreamReader;
 public class 더하기사이클_1110 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String n = br.readLine();
+        int n = Integer.parseInt(br.readLine());
 
         int cnt = 0;
-        String x = n;
+        int copy = n;
 
         while ( true ) {
-            int a = n.charAt(1) - 48; // 주어진 값 오른쪽 수
-            int b = n.charAt(0) - 48; // 주어진 값 왼쪽 수
-            int add = a + b;
 
-            n = String.valueOf(a) + String.valueOf(add); // n값 갱신
-            cnt ++; // cnt + 1
+            // n의 일의 자리수(십의 자리수로 전환) + n의 자리수의 합의 일의 자리수
+            n = ((n % 10) * 10) + ((( n / 10 ) + ( n % 10 )) % 10);
+            cnt ++;
 
-            if ( x.equals(n) ) {
+            // 기존 값과 반복문을 수행한 값이 같을 때 종료
+            if ( n == copy ) {
                 break;
             }
         }
-
         System.out.println(cnt);
     }
 }

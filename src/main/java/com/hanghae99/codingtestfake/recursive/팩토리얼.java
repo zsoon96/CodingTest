@@ -16,6 +16,7 @@ public class 팩토리얼 {
     }
 
     // 재귀적으로 구현
+    // 반복문보다 코드가 간결함
     public static int factorialRecursive(int n) {
         // n이 1 이하인 경우 1을 반환
         if ( n <= 1 ) {

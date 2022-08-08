@@ -31,7 +31,7 @@ public class 섬의개수_4963 {
                 break;
             }
 
-            // 지도 그리기
+            // 지도 그리기 (그리는 순서 꼼꼼하게 확인!) > w 먼저 만들고 h 돌려서 에러남 ㅜ
             for ( int i = 0; i < h; i++ ) {
                 st = new StringTokenizer(br.readLine());
                 for ( int j = 0; j < w; j++ ) {

@@ -24,7 +24,7 @@ public class 숫자판점프_2210_int {
            }
         }
 
-        visited = new boolean[1000000]; // 크기를 왜 이만큼 해줘야하는지 모르겠음...
+        visited = new boolean[1000000]; // 최종적으로 6자리 수가 999999까지 만들 수 있기때문에!
         cnt = 0;
 
         for ( int i = 0; i < 5; i++ ) {

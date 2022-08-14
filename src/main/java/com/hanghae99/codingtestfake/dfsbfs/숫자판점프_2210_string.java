@@ -48,6 +48,7 @@ public class 숫자판점프_2210_string {
             }
 
             // 리스트에 해당 문자열이 없다면 담아주기(중복 제거)
+            // indexOf(): 리스트에 인자가 있으면 인덱스값을, 없으면 -1 리턴
             if (list.indexOf(s) < 0) {
                 list.add(s);
             }

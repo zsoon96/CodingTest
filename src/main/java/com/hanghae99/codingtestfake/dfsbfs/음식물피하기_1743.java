@@ -7,10 +7,10 @@ import java.util.StringTokenizer;
 
 public class 음식물피하기_1743 {
     static int n, m, k, r, c;
-    static boolean[][] visited;
-    static int[][] map;
-    static int cnt = 1;
-    static int max = 0;
+    static boolean[][] visited; // 음식물 존재 여부
+    static int[][] map; // 방문 처리 여부 (0과 1)
+    static int cnt;
+    static int max;
     static int[] dx = {1,0,-1,0};
     static int[] dy = {0,1,0,-1};
 
@@ -32,7 +32,7 @@ public class 음식물피하기_1743 {
             }
         }
 
-        // 입력한 좌표값 방문처리
+        // 입력한 좌표값 방문처리 (음식물 표시)
         for ( int i = 0; i < k; i++ ) {
             st = new StringTokenizer(br.readLine());
             r = Integer.parseInt(st.nextToken());
@@ -40,24 +40,21 @@ public class 음식물피하기_1743 {
             visited[r][c] = true;
         }
 
-        // 방문 처리된 좌표값만 check 함수 실행
+        // 음식물 있는 곳에만 check 함수 실행
         for ( int i = 1; i <= n; i++ ) {
             for ( int j = 1; j <= m; j++ ) {
                 if ( visited[i][j] ) {
-                    check (i, j);
+                    cnt = 1; // 영역 추가
+                    check (i, j); // 상하좌우 탐색
+                    max = Math.max (max, cnt); // 최대값 산출
                 }
             }
-
-            if ( cnt > max ) {
-                max = cnt;
-            }
         }
-
-        System.out.println(cnt);
+        System.out.println(max);
     }
 
     static void check(int x, int y) {
-        // 방문되고, 좌표값을 1로 바꿈 (구별을 위해..)
+        // 음식물이 있고, 방문처리 1로 바꿈
         map[x][y] = 1;
 
         // 상하좌우 반복
@@ -65,13 +62,12 @@ public class 음식물피하기_1743 {
             int nx = x + dx[i];
             int ny = y + dy[i];
 
-            // 주어진 공간에 방문처리가 되고, 좌표값이 0일 경우 영역 + 1 주고 해당 위치에서 다시 상하좌우 탐색
+            // 주어진 공간에 음식물이 있고, 방문처리가 0일 경우
+            // 영역 + 1 주고 해당 위치에서 다시 상하좌우 탐색
             if ( nx > 0 && ny > 0 && nx <= n && ny <= m ) {
-                if ( visited[nx][ny] ) {
-                    if ( map[nx][ny] == 0 ) {
-                       cnt++;
-                       check (nx, ny);
-                    }
+                if ( visited[nx][ny] && map[nx][ny] == 0 ) {
+                    cnt++;
+                    check (nx, ny);
                 }
             }
         }
